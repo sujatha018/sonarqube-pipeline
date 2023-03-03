@@ -14,7 +14,7 @@ pipeline {
                 sh 'mvn -B -DskipTests clean install'
             }
         }
-    }
+    
 
 
         stage("SonarQube analysis") { 
@@ -35,4 +35,5 @@ pipeline {
                 }
             }
     }
+}
 }
