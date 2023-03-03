@@ -2,12 +2,16 @@ pipeline {
     agent {
         label 'java_agent'
     }
-
     parameters {
-        properties([parameters([choice(choices: ['master\nmain'], description: 'Choose branch', name: 'BRANCH')])])
+        
+        // Define choice parameter.
+        choice (
+            name: 'BRANCH',
+            choices: 'master\nmain'
+            description: 'Choose the branch.'
+        )
     }
-
-
+        
     stages {
         stage('Build') {
             steps {
