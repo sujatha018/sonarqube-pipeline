@@ -3,11 +3,10 @@ pipeline {
         label 'java_agent'
     }
 
-    parameters { 
+    parameters {
         properties([parameters([choice(choices: ['master\nmain'], description: 'Choose branch', name: 'BRANCH')])])
     }
-
-
+        
     stages {
         stage('Build') {
             steps {
