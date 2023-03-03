@@ -4,7 +4,7 @@ pipeline {
     }
 
     parameters {
-        choices: ['master\nmain'], description: 'Choose branch', name: 'BRANCH'
+        choice choices: ['main', 'master'], description: 'choose branch', name: 'BRANCH'
     }
         
     stages {
