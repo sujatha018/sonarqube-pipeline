@@ -4,7 +4,7 @@ pipeline {
     }
 
     parameters {
-        properties([parameters([choice(choices: ['master\nmain'], description: 'Choose branch', name: 'BRANCH')])])
+        choices: ['master\nmain'], description: 'Choose branch', name: 'BRANCH'
     }
         
     stages {
