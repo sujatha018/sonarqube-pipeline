@@ -3,9 +3,10 @@ pipeline {
         label 'java_agent'
     }
 
-parameters{
-    choices: ['master', 'main', 'branch1', 'braanch2'], description: 'Select branch to build', name: 'branch '
-}
+    parameters {
+         choice(name: 'BRANCH', choices: ['master', 'main, 'branch1', 'branch2'], description: 'Choose branch')
+         }
+
 
     stages {
         stage('Build') {
@@ -13,6 +14,7 @@ parameters{
                 sh 'mvn -B -DskipTests clean install'
             }
         }
+    }
 
 
     stage("SonarQube analysis") {
