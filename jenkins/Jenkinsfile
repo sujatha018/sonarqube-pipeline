@@ -5,11 +5,11 @@ pipeline {
     parameters {
         
         // Define choice parameter.
-        choice (
+        choice 
             name: 'BRANCH',
             choices: 'master\nmain'
             description: 'Choose the branch.'
-        )
+        
     }
         
     stages {
