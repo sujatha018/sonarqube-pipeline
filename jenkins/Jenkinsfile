@@ -29,9 +29,9 @@ pipeline {
             steps {
               timeout(time: 1, unit: 'HOURS') {
                 waitForQualityGate abortPipeline: true
-              }
             }
         }
+    }
 
         stage('Test') {
             steps {
@@ -40,8 +40,8 @@ pipeline {
                 post {
                     always {
                         junit 'target/surefire-reports/*.xml'
+                    }
                 }
             }
-    }
-}
+        }
 }
