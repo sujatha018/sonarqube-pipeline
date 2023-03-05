@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label 'java_agent'
-    }
+    agent any
 
     parameters {
         choice choices: ['main', 'master'], description: 'choose branch', name: 'BRANCH'
